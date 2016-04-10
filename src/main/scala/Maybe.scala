@@ -2,7 +2,7 @@ import scala.annotation.tailrec
 
 object Maybe {
 
-  // 1
+  // 1 Either null, exception or "special" int
   @tailrec
   def badIndexOf[T](x: T, xs: List[T], from: Int): Int = xs match {
     case h :: t if h == x => from
@@ -38,7 +38,7 @@ object Maybe {
   def goodIndexOf[T](x: T, xs: List[T]): Maybe[Int] = goodIndexOf(x, xs, 0)
 
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]) {
     // 1
     println("-----Bad style")
     println(badIndexOf("c", List("a", "c", "s")))
